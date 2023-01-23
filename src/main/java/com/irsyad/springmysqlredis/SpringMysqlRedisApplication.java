@@ -8,6 +8,7 @@ public class SpringMysqlRedisApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringMysqlRedisApplication.class, args);
+		System.out.println("RUnnnn");
 	}
 
 }

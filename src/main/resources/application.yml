@@ -15,7 +15,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/redis-cache?useUnicode=true&characterEncoding=UTF8&useSSL=false
     username: root
-    password: secret
+    password: 
 
   # ===============================
   # = Redis configurations

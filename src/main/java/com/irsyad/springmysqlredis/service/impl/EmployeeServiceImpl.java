@@ -24,7 +24,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final EmployeeRepository employeeRepository;
     private final RedisTemplate<String, Employee> redisTemplate;
-
+    
     @Override
     public Employee findEmployeeById(Long id) {
         var key = "emp_" + id;
@@ -37,7 +37,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         final Optional<Employee> employee = employeeRepository.findById(id);
         if(employee.isPresent()) {
-            operations.set(key, employee.get(), 10, TimeUnit.SECONDS);
+            operations.set(key, employee.get());
             log.info("EmployeeServiceImpl.findEmployeeById() : cache insert >> " + employee.get().toString());
             return employee.get();
         } else {
